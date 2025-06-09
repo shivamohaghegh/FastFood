@@ -1,7 +1,12 @@
 import { FaUser } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const UsersInfo = () => {
-  return <FaUser type="button"/>;
+  return (
+    <NavLink to="/user">
+      <FaUser type="button" />
+    </NavLink>
+  );
 };
 
 export default UsersInfo;

@@ -1,4 +1,4 @@
-const UserInfo = () => {
+const UserInfoPage = () => {
   return (
     <div className="container mt-3">
       <h1>User Info</h1>
@@ -6,4 +6,4 @@ const UserInfo = () => {
   );
 };
 
-export default UserInfo;
+export default UserInfoPage;

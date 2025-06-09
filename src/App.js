@@ -1,17 +1,24 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-import ShoppingCard from "./Components/ShoppingCard/ShoppingCard";
-import UsersInfo from "./Components/Users/UsersInfo";
+import ShoppingCardPage from "./Pages/ShoppingCardPage";
+import UsersInfoPage from "./Pages/UserInfoPage";
+import Header from "./Components/Header/Header";
+import Navbar from "./Components/Navbar/Navbar";
+import { AppProviders } from "./Components/Providers/AppProviders";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route  path="/" element={<Home />} />
-        <Route  path="/shoppingcard" element={<ShoppingCard />} />
-        <Route  path="/user" element={<UsersInfo />} />
-      </Routes>
+      <AppProviders>
+        <Header />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/shoppingcard" element={<ShoppingCardPage />} />
+          <Route path="/user" element={<UsersInfoPage />} />
+        </Routes>
+      </AppProviders>
     </BrowserRouter>
   );
 }

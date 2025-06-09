@@ -1,26 +1,34 @@
 import { useCategory } from "../Providers/AppProviders";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const CategoryList = ({ categoryList }) => {
   const { categoryValue, setCategoryValue } = useCategory();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleClick = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const value = e.target.dataset.value;
     setCategoryValue(value);
+
+    // Go to homepage if you're not already there
+    if (location.pathname !== "/") {
+      navigate("/");
+    }
   };
 
   return (
     <div className="container-fluid ">
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center">
           <ul className="navbar-nav">
             <li className="nav-item">
               <a
-                className="nav-link active"
+                className={`nav-link btn btn-link ${
+                  categoryValue === "All" ? "active" : ""
+                }`}
                 onClick={handleClick}
-                aria-current="page"
                 data-value="All"
-                href="#"
               >
                 All
               </a>
@@ -28,11 +36,11 @@ const CategoryList = ({ categoryList }) => {
             {categoryList?.map((categoryItem) => (
               <li className="nav-item" key={categoryItem.id}>
                 <a
-                  className="nav-link active"
+                  className={`nav-link btn btn-link ${
+                    categoryValue === categoryItem.name ? "active" : ""
+                  }`}
                   onClick={handleClick}
-                  aria-current="page"
                   data-value={categoryItem.name}
-                  href="#"
                 >
                   {categoryItem.name}
                 </a>
