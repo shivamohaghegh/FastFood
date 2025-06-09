@@ -1,58 +1,45 @@
-import { useCategory } from "../Context/CategoryContext";
-import SearchBox from "../SearchBox/SearchBox";
+import { useCategory } from "../Providers/AppProviders";
 
 const CategoryList = ({ categoryList }) => {
-  const { value: categoryName, setValue: setCategoryName } = useCategory("All");
+  const { categoryValue, setCategoryValue } = useCategory();
 
   const handleClick = (e) => {
     e.preventDefault();
-    setCategoryName(e.target.getAttribute("href"));
-  };
-
-  const fetchList = () => {
-    if (categoryList.length > 0) {
-      return (
-        <>
-          <div className="d-flex align-items-center">
-            <div>
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <a
-                    className="nav-link active"
-                    onClick={handleClick}
-                    aria-current="page"
-                    href="All"
-                  >
-                    All
-                  </a>
-                </li>
-                {categoryList?.map((categoryItem) => (
-                  <li className="nav-item" key={categoryItem.id}>
-                    <a
-                      className="nav-link active"
-                      onClick={handleClick}
-                      aria-current="page"
-                      href={categoryItem.name}
-                    >
-                      {categoryItem.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <SearchBox />
-            </div>
-          </div>
-        </>
-      );
-    }
+    const value = e.target.dataset.value;
+    setCategoryValue(value);
   };
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid ">
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        {fetchList()}
+              <div className="d-flex align-items-center">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a
+                className="nav-link active"
+                onClick={handleClick}
+                aria-current="page"
+                data-value="All"
+                href="#"
+              >
+                All
+              </a>
+            </li>
+            {categoryList?.map((categoryItem) => (
+              <li className="nav-item" key={categoryItem.id}>
+                <a
+                  className="nav-link active"
+                  onClick={handleClick}
+                  aria-current="page"
+                  data-value={categoryItem.name}
+                  href="#"
+                >
+                  {categoryItem.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -1,15 +1,20 @@
+import { useSearch } from "../Providers/AppProviders";
+
 const SearchBox = () => {
+  const {searchValue, setSearchValue} = useSearch();
+
   const handleChange = (e) => {
-    // setSearchTerm(e.target.value);
+    setSearchValue(e.target.value);
   };
 
   return (
     <input
-      className="form-control form-control-sm ms-5 search-box"
+      className="form-control form-control-sm align-items-start search-box"
       type="text"
       placeholder="Search ..."
       aria-label="Search"
-      onChange={(e) => handleChange(e)}
+      onChange={handleChange}
+      value={searchValue}
     />
   );
 };

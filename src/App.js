@@ -1,15 +1,18 @@
 import "./App.css";
-import FoodList from "./Components/FoodList/FoodList";
-import Header from "./Components/Header/Header";
-import Navbar from "./Components/Navbar/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import ShoppingCard from "./Components/ShoppingCard/ShoppingCard";
+import UsersInfo from "./Components/Users/UsersInfo";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Navbar />
-      <FoodList />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route  path="/" element={<Home />} />
+        <Route  path="/shoppingcard" element={<ShoppingCard />} />
+        <Route  path="/user" element={<UsersInfo />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

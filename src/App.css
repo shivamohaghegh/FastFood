@@ -1,5 +1,11 @@
 .bg-header {
-  background-image: url(../src/Images/4071fb3871e21c92096b40635984d49e.jpg);
+  /* background-image: url(../src/Images/4071fb3871e21c92096b40635984d49e.jpg); */
+  background-image: url(../src/Images/1adfa1ad2534165c221b1a0c7d352206.jpg);
+  /* background-image: url(../src/Images/46233f969bbfe40b5a8f5fe321e63f37.jpg); */
+  /* background-image: url(../src/Images/d133d989dd6ad82b450114b2939d413c.jpg);  */
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-position: center; */
   height: 200px;
   width: 100%;
 }
@@ -8,21 +14,39 @@
   background-color: rgb(246, 244, 244);
   height: 50px;
   width: 80%;
-  margin-top: -30px;
+  margin-top: -3%;
 }
 
+
 .food-card {
-  height: 300px !important;
+  height: 330px !important;
+  overflow: hidden;
+  overflow: hidden;
+  transition: transform 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.food-card p {
+  font-size: 0.7rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .food-card img {
   height: 200px;
   width: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.food-card img:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
 }
 
 .search-box:focus {
-  border-color: rgb(226, 226, 20) !important;
-  box-shadow: 0 0 0 0.25rem rgba(233, 253, 13, 0.25) !important;
+  border-color: rgba(188, 203, 29, 0.719) !important;
+  box-shadow: 0 0 0 0.25rem rgba(253, 181, 13, 0.25) !important;
 }
+
+
