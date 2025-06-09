@@ -1,38 +1,28 @@
-.App {
-  text-align: center;
+.bg-header {
+  background-image: url(../src/Images/4071fb3871e21c92096b40635984d49e.jpg);
+  height: 200px;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-bar {
+  background-color: rgb(246, 244, 244);
+  height: 50px;
+  width: 80%;
+  margin-top: -30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.food-card {
+  height: 300px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.food-card img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-box:focus {
+  border-color: rgb(226, 226, 20) !important;
+  box-shadow: 0 0 0 0.25rem rgba(233, 253, 13, 0.25) !important;
 }

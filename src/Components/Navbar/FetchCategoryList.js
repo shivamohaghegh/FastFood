@@ -1,0 +1,16 @@
+import { useEffect, useState } from "react";
+
+const FetchCategoryList = () => {
+
+    const [categoryList, setCategoryList] = useState([])
+
+  useEffect(() => {
+    fetch("https://6844019c71eb5d1be032236c.mockapi.io/FoodCategory")
+      .then((res) => res.json())
+      .then((json) => setCategoryList(json));
+  }, []);
+
+  return categoryList;
+};
+
+export default FetchCategoryList;
