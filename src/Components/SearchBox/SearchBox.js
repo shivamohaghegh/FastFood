@@ -11,7 +11,7 @@ const SearchBox = () => {
     <input
       className="form-control form-control-sm align-items-start search-box"
       type="text"
-      placeholder="Search ..."
+      placeholder="Search"
       aria-label="Search"
       onChange={handleChange}
       value={searchValue}

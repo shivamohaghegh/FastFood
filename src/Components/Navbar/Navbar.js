@@ -6,8 +6,9 @@ import UsersInfo from "../Users/UsersInfo";
 
 const Navbar = () => {
   const categoryList = FetchCategoryList();
+
   const fetchData = () => {
-    if (categoryList.length > 0) {
+    if (categoryList !== '') {
       return (
         <>
           <CategoryList categoryList={categoryList} />

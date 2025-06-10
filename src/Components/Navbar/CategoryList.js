@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 const CategoryList = ({ categoryList }) => {
   const { categoryValue, setCategoryValue } = useCategory();
   const navigate = useNavigate();
-  const location = useLocation();
+  const location = useLocation();  
 
   const isHome = location.pathname === "/";
 
