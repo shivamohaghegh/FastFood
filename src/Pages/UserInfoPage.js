@@ -1,6 +1,6 @@
 const UserInfoPage = () => {
   return (
-    <div className="container mt-3">
+    <div className="container mt-5">
       <h1>User Info</h1>
     </div>
   );

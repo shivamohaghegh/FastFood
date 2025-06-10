@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const UsersInfo = () => {
   return (
     <NavLink to="/user">
-      <FaUser type="button" />
+      <FaUser type="button" className="text-dark" />
     </NavLink>
   );
 };

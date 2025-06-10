@@ -14,7 +14,7 @@ export const useSort = () => useContext(SortContext);
 
 // --- Combined Provider ---
 export const AppProviders = ({ children }) => {
-  const [categoryValue, setCategoryValue] = useState("");
+  const [categoryValue, setCategoryValue] = useState("All");
   const [searchValue, setSearchValue] = useState("");
   const [sortValue, setSortValue] = useState({ sortBy: "", order: "" });
 

@@ -1,6 +1,6 @@
 const ShoppingCardPage = () => {
   return (
-    <div className="container mt-3">
+    <div className="container mt-5">
       <h1>Shopping Card</h1>
     </div>
   );

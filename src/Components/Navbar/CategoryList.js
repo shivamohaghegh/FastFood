@@ -6,44 +6,43 @@ const CategoryList = ({ categoryList }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const isHome = location.pathname === "/";
+
   const handleClick = (e) => {
-    // e.preventDefault();
     const value = e.target.dataset.value;
     setCategoryValue(value);
-
-    // Go to homepage if you're not already there
-    if (location.pathname !== "/") {
+    if (!isHome) {
       navigate("/");
     }
   };
 
   return (
-    <div className="container-fluid ">
+    <div className="container-fluid">
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <div className="d-flex align-items-center">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a
+              <button
                 className={`nav-link btn btn-link ${
-                  categoryValue === "All" ? "active" : ""
+                  isHome && categoryValue === "All" ? "active" : ""
                 }`}
                 onClick={handleClick}
                 data-value="All"
               >
                 All
-              </a>
+              </button>
             </li>
             {categoryList?.map((categoryItem) => (
               <li className="nav-item" key={categoryItem.id}>
-                <a
+                <button
                   className={`nav-link btn btn-link ${
-                    categoryValue === categoryItem.name ? "active" : ""
+                    isHome && categoryValue === categoryItem.name ? "active" : ""
                   }`}
                   onClick={handleClick}
                   data-value={categoryItem.name}
                 >
                   {categoryItem.name}
-                </a>
+                </button>
               </li>
             ))}
           </ul>
